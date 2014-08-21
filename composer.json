@@ -1,0 +1,8 @@
+{
+    "require": {
+        "react/react": "0.*",
+        "cboden/ratchet": "0.*",
+        "phpmake/firmata": "dev-master"
+    },
+    "minimum-stability" : "dev"
+}
