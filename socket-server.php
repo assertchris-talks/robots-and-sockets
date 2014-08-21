@@ -13,7 +13,8 @@ $server = IoServer::factory(
       new Grid()
     )
   ),
-  8002
+  8002,
+  "192.168.0.31"
 );
 
 echo "Socket server on port 8002";

@@ -14,18 +14,18 @@ class Grid implements MessageComponent
   {
     $this->connections = new SplObjectStorage();
 
-    // $this->device = $device = new Device(
-    //   "/dev/tty.usbserial-A7030YFN"
-    // );
-    //
-    // $device->setPinMode(2, PHPMake\Firmata::OUTPUT);
-    // $device->setPinMode(3, PHPMake\Firmata::OUTPUT);
-    // $device->setPinMode(4, PHPMake\Firmata::OUTPUT);
-    // $device->setPinMode(5, PHPMake\Firmata::OUTPUT);
-    // $device->setPinMode(6, PHPMake\Firmata::OUTPUT);
-    // $device->setPinMode(7, PHPMake\Firmata::OUTPUT);
-    //
-    // $device->setPinMode(9, PHPMake\Firmata::PWM);
+    $this->device = $device = new Device(
+      "/dev/tty.usbserial-A7030YFN"
+    );
+
+    $device->setPinMode(2, PHPMake\Firmata::OUTPUT);
+    $device->setPinMode(3, PHPMake\Firmata::OUTPUT);
+    $device->setPinMode(4, PHPMake\Firmata::OUTPUT);
+    $device->setPinMode(5, PHPMake\Firmata::OUTPUT);
+    $device->setPinMode(6, PHPMake\Firmata::OUTPUT);
+    $device->setPinMode(7, PHPMake\Firmata::OUTPUT);
+
+    $device->setPinMode(9, PHPMake\Firmata::PWM);
   }
 
   public function onOpen(Connection $c)
@@ -38,7 +38,7 @@ class Grid implements MessageComponent
     if (strlen($message) === 3) {
       $parts = explode(":", $message);
 
-      // $this->set((integer) $parts[0], (integer) $parts[1], 255);
+      $this->set((integer) $parts[0], (integer) $parts[1], 255);
 
       foreach ($this->connections as $connection) {
         if ($c != $connection) {
