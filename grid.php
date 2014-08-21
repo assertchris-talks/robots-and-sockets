@@ -38,8 +38,6 @@ class Grid implements MessageComponent
     if (strlen($message) === 3) {
       $parts = explode(":", $message);
 
-      echo $message . "\n";
-
       // $this->set((integer) $parts[0], (integer) $parts[1], 255);
 
       foreach ($this->connections as $connection) {
